@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <sim>
+  <description>Eastbourne monoplane</description>
+  <author>LesterBoffo (FDM and 3D Models)</author>
+  <status>alpha</status>
+  <rating>
+   <FDM type="int">2</FDM>
+   <systems type="int">1</systems>
+   <model type="int">3</model>
+   <cockpit type="int">1</cockpit>
+  </rating>
+
+  <flight-model archive="y">yasim</flight-model>
+  <aero archive="y">eastbourne_mono-yasim</aero>
+
+  <startup>
+   <splash-texture>Aircraft/eastbourne_mono/splash.png</splash-texture>
+   <units>meters</units>
+   <fuel-fraction>0.8</fuel-fraction>
+  </startup>
+
+  <sound>
+   <path>Aircraft/eastbourne_mono/Sounds/eastbourne-sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/eastbourne_mono/Models/eastbournmono.xml</path>
+  </model>
+
+  <view>
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">0.0</x-offset-m>
+    <y-offset-m archive="y">0.44</y-offset-m>
+    <z-offset-m archive="y">0.49</z-offset-m>
+    <pitch-offset-deg>-9</pitch-offset-deg>
+   </config>
+  </view>
+
+  <!-- Payload -->
+  <weight>
+   <name type="string">Pilot</name>
+   <weight-lb alias="/yasim/eastborne_mono/pilot-lb"/>
+   <min-lb type="double">140.0</min-lb>
+   <max-lb type="double">210.0</max-lb>
+  </weight> 
+
+ </sim>
+
+</PropertyList>
