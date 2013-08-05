@@ -29415,7 +29415,7 @@ kids 0
 OBJECT poly
 name "Leftwheel"
 loc 0.16911 0.0106132 -0.00325823
-texture "spoked wheel.png"
+texture "spokedwheel.png"
 numvert 664
 -0.667054 -1.01578 0.645631
 -0.673641 -1.01647 0.629635
@@ -33790,7 +33790,7 @@ kids 0
 OBJECT poly
 name "Rightwheel"
 loc 0.16911 0.0106132 -0.00325823
-texture "spoked wheel.png"
+texture "spokedwheel.png"
 numvert 664
 -0.667054 -1.01578 -0.64688
 -0.673641 -1.01647 -0.662876
