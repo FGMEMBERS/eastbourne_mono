@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Eastbourne Monoplane   :  June 2013 Lester Boffo
+
+     Source       : http://en.wikipedia.org/wiki/E.A.C. Monoplane                 
+     Manufacturer          : Eastbourne Aircraft Company Ltd.
+            Type           : Trainer Monoplane
+            Year           : 1912
+            Powerplant     : 35 H.P. Anzani "Y" radial
+            Wingspan       : 29.46
+            Length         : 21.1
+            Height         : 7.2
+            weight max     : 702 lbs
+            Cruise speed   : 59 knots
+            Crew           : Pilot only 
+-->
+
+<airplane mass="547">
+
+  <approach speed="31" aoa="3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.18"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+  </approach>
+
+  <cruise speed="57" alt="0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.9"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+  </cruise>
+
+  <cockpit x="-0.075" y="0" z="1.125"/>
+
+  <fuselage ax="1.02" ay="0" az="0.0" bx="-0.192" by="0,0" bz="0.20" width="0.840" taper="0.36" midpoint="1.0"/>
+  <fuselage ax="-0.192" ay="0" az="-0.20" bx="-3.934" by="0" bz="0.11" width="0.840" taper="0.26" midpoint="0.0" cy="0.80" cz="0.77"/> 
+
+
+
+  <wing x="-0.154" y="0.061" z="0.29"  
+        chord="1.320" 
+        length="3.720"  
+        taper="0.99"
+        incidence="2.5"
+        twist="-0.5" 
+        dihedral="0" 
+        camber="0.20">
+        <stall aoa="11" width="3" peak="1.7"/>
+        <flap0 start="0.71" end="0.95" lift="1.4" drag="1.28"/>
+
+        <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
+
+        <control-output control="FLAP0" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP0" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/aileron-pos-norm"/>
+  </wing>
+
+
+ <hstab x="-3.422" y="0.69" z="0.102" 
+         chord="1.418"
+         length="1.015"
+         camber="0.02"
+         incidence="0.5" 
+         taper="0.7">
+         <stall aoa="19" width="5" peak="2.5"/>
+         <flap0 start="0" end="1.0" lift="1.7" drag="1.2"/> 
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.960" y="0" z="0.143" 
+         chord="0.660" 
+         length="0.607"
+         effectiveness="1.5" 
+         taper="0.83">
+         <stall aoa="18" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.7" drag="1.2"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engine       : Anzani 3-cylinder
+
+       Information  : http://en.wikipedia.org/wiki/Anzani_3-cylinder
+
+       Type         : 3-cylinder air-cooled Y-type
+       Power        :   35 hp
+       Displacement : 3.53 litres (216 cu in)
+       Mass         :   65 kg (143 lb)
+  -->
+  <propeller x="1.808" y="0" z="0.0"
+             radius="0.945"
+             mass="143"
+             moment="2.8"
+             cruise-alt="2000"
+             cruise-speed="55"
+             cruise-rpm="1350"
+             cruise-power="31"
+             takeoff-rpm="1400"
+             takeoff-power="35">
+             <actionpt x="2.063" y="0" z="0.004"/>
+             <piston-engine eng-power="35" 
+                            eng-rpm="1400"
+                            bore="4.28"
+                            stroke="5.0"
+                            displacement="216"
+                            min-throttle="0.06"
+                            compression-ratio="4.1">
+                            <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+                            <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+                            <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+                            <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+            </piston-engine>
+  </propeller>
+
+  <!-- Left wheel -->  
+  <gear x="0.309" y="0.68" z="-1.23" 
+        sfric="0.71"
+        dfric="0.6"
+        spring="1.28"
+        damp="0.8"
+        compression="0.05">
+  </gear>
+
+  <!-- Right wheel -->
+  <gear x="0.309" y="-0.68" z="-1.23" 
+        sfric="0.71"
+        dfric="0.6"
+        spring="1.28"
+        damp="0.8"
+        compression="0.05">
+  </gear>
+
+  <!-- rear skid -->  
+  <gear x="-2.683" y="0" z="-0.652" 
+        sfric="1.1"
+        dfric="0.86"
+        spring="0.92"
+        damp="0.48"
+        compression="0.09">
+  </gear>
+
+  <!-- fuel tank -->
+  <tank x="0.15" y="0" z="0.089" capacity="95"/> 
+
+       <!-- Pilot Weight -->
+ <weight x="-0.56" y="0.00" z="-0.093" mass-prop="/sim/weight[0]/weight-lb"/>
+ 
+
+</airplane>
+
